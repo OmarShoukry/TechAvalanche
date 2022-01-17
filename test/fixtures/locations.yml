@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Montreal
+  addressline1: MyString
+  addressline2: MyString
+  province: 1
+  city: MyString
+  postalcode: MyString
+
+two:
+  name: Ottawa
+  addressline1: MyString
+  addressline2: MyString
+  province: 1
+  city: MyString
+  postalcode: MyString

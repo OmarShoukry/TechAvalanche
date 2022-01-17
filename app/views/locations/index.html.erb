@@ -1,0 +1,24 @@
+<h1>Locations</h1>
+
+<ul>
+    <% @locations.each do |location| %>
+        <li>
+            <a href="<%= location_path(location) %>">
+                <%= location.name %>
+            </a>
+        </li>
+            <ul>
+                <li> Address: <%= location.addressline1 %>  <%= location.addressline2 %>  </li>
+                <li> City: <%= location.city %> </li>
+                <li> Province: <%= location.province %>  </li>
+                <li> Postal Code: <%= location.postalcode %>  </li>
+            </ul>
+        <br>
+    <% end %>
+
+    <%= link_to "Add new location", new_location_path %>
+    <br>
+    <br>
+    <%= link_to "Back to Homepage", root_path %>
+    
+</ul>

@@ -1,0 +1,26 @@
+<h1> <%= @location.name %> </h1>
+<ul>
+    <li> Address: <%= @location.addressline1 %>  <%= @location.addressline2 %>  </li>
+    <li> City: <%= @location.city %> </li>
+    <li> Province: <%= @location.province %>  </li>
+    <li> Postal Code: <%= @location.postalcode %>  </li>
+
+    <li> Available stock </li>
+    <%if !@location.product_listings.empty? %>
+    <ul>
+        <% @location.product_listings.each do |listing| %>
+        <li> <%= link_to listing.product.name, product_path(listing.product)  %> x<%= listing.quantity %> </li>
+        <% end %>
+    </ul>
+    <% end %>
+
+</ul>
+
+<ul>
+    <%= link_to "Edit", edit_location_path(@location) %>
+    <br>
+    <br>
+    <%= button_to "Delete", location_path(@location), method: :delete%>
+    <br>
+    <%= link_to "View Locations", locations_path %>
+</ul>

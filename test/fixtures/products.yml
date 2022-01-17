@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+iphone:
+  name: Iphone
+  weight: 1.5
+  width: 1
+  height: 1
+  depth: 1
+
+switch:
+  name: Switch
+  weight: 1.5
+  width: 1
+  height: 1
+  depth: 1

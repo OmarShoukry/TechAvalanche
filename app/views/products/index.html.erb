@@ -1,0 +1,28 @@
+<h1>Products</h1>
+
+<ul>
+    <% @products.each do |product| %>
+        <li>
+            <a href="<%= product_path(product) %>">
+                <%= product.name %>
+            </a>
+        </li>
+            <ul>
+                <li> Description: <%= product.description %> </li>
+                <li> Dimensions: <%= product.width %> x <%= product.height %> x <%= product.depth %> cm </li>
+                <li> Weight: <%= product.weight %> g </li>
+            </ul>
+        <%= link_to "Add new listing", new_product_listing_path %>
+        <br>
+        <br>
+        <br>
+    <% end %>
+
+    <br>
+    <br>
+    <%= link_to "Add new product", new_product_path %>
+    <br>
+    <br>
+    <%= link_to "Back to Homepage", root_path %>
+    
+</ul>

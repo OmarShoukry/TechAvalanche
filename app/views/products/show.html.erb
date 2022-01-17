@@ -1,0 +1,28 @@
+
+<h1> <%= @product.name %> </h1>
+<ul>
+    <li> Description: <%= @product.description %> </li>
+    <li> Dimensions: <%= @product.width %> x <%= @product.height %> x <%= @product.depth %> cm </li>
+    <li> Weight: <%= @product.weight %> g </li>
+    
+
+    <li> Quantities </li>
+    <%if !@product.product_listings.empty? %>
+    <ul>
+        <% @product.product_listings.each do |listing| %>
+        <li> x<%= listing.quantity %> at <%= link_to listing.location.name, location_path(listing.location)  %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= button_to "Edit listing", edit_product_listing_path(listing), method: :get, params:{product_listing: {product_id:listing.product_id, location_id:listing.location_id, quantity:listing.quantity}} %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= button_to "Delete listing", product_listing_path(listing), method: :delete %> </li> 
+        <% end %>
+    </ul>
+    <%end %>
+</ul>
+
+
+<ul>
+    <%= link_to "Edit", edit_product_path(@product) %>
+    <br>
+    <br>
+    <%= button_to "Delete", product_path(@product), method: :delete%>
+    <br>
+    <%= link_to "View Locations", products_path %>
+    
+</ul>
