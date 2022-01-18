@@ -8,4 +8,7 @@ This app is a standard rails app built with rails 7. The focus of this app was o
 The application allows you to manage warehouse locations, products and product inventories per location.
 
 ## Running this application 
+
+This app is live on [Heroku](https://tech-avalanche.herokuapp.com/)
+
 To run this application locally, first install all dependencies with `bundle install` then run the application with `bin/rails s`
