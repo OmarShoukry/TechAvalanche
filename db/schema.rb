@@ -25,10 +25,10 @@ ActiveRecord::Schema.define(version: 2022_01_17_210120) do
 
   create_table "product_listings", force: :cascade do |t|
     t.integer "quantity", null: false
+    t.integer "product_id", null: false
+    t.integer "location_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "location_id"
-    t.integer "product_id"
     t.index ["product_id", "location_id"], name: "index_product_listings_on_product_id_and_location_id"
   end
 
@@ -43,6 +43,6 @@ ActiveRecord::Schema.define(version: 2022_01_17_210120) do
     t.string "description"
   end
 
-  add_foreign_key "product_listings", "locations"
-  add_foreign_key "product_listings", "products"
+  add_foreign_key "product_listings", "locations", on_delete: :cascade
+  add_foreign_key "product_listings", "products", on_delete: :cascade
 end
