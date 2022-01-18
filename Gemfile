@@ -9,6 +9,9 @@ gem "rails", "~> 7.0.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+# Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
+gem "webpacker", "~> 5.0"
+
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 

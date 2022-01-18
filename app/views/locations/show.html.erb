@@ -17,10 +17,9 @@
 </ul>
 
 <ul>
-    <%= link_to "Edit", edit_location_path(@location) %>
+    <%= link_to "Edit", edit_location_path(@location), :class => "btn btn-secondary" %>
+    
+    <%= button_to "Delete", location_path(@location), method: :delete, :class => "btn btn-danger" %>
     <br>
-    <br>
-    <%= button_to "Delete", location_path(@location), method: :delete%>
-    <br>
-    <%= link_to "View Locations", locations_path %>
+    <%= link_to "View Locations", locations_path, :class => "btn btn-primary" %>
 </ul>

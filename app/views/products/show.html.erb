@@ -1,5 +1,5 @@
 
-<h1> <%= @product.name %> </h1>
+<h1 class="myclass"> <%= @product.name %> </h1>
 <ul>
     <li> Description: <%= @product.description %> </li>
     <li> Dimensions: <%= @product.width %> x <%= @product.height %> x <%= @product.depth %> cm </li>
@@ -10,7 +10,11 @@
     <%if !@product.product_listings.empty? %>
     <ul>
         <% @product.product_listings.each do |listing| %>
-        <li> x<%= listing.quantity %> at <%= link_to listing.location.name, location_path(listing.location)  %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= button_to "Edit listing", edit_product_listing_path(listing), method: :get, params:{product_listing: {product_id:listing.product_id, location_id:listing.location_id, quantity:listing.quantity}} %> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <%= button_to "Delete listing", product_listing_path(listing), method: :delete %> </li> 
+        <li> x<%= listing.quantity %> at <%= link_to listing.location.name, location_path(listing.location)  %>  
+        <div class="btn-toolbar"> 
+        <%= button_to "Edit listing", edit_product_listing_path(listing), method: :get, params:{product_listing: {product_id:listing.product_id, location_id:listing.location_id, quantity:listing.quantity}}, :class => "btn btn-secondary" %> 
+         <%= button_to "Delete listing", product_listing_path(listing), method: :delete, :class => "btn btn-danger" %> 
+        </div> </li> 
         <% end %>
     </ul>
     <%end %>
@@ -18,11 +22,8 @@
 
 
 <ul>
-    <%= link_to "Edit", edit_product_path(@product) %>
-    <br>
-    <br>
-    <%= button_to "Delete", product_path(@product), method: :delete%>
-    <br>
-    <%= link_to "View Locations", products_path %>
+    <%= link_to "Edit", edit_product_path(@product), :class => "btn btn-secondary" %>
+    <%= button_to "Delete", product_path(@product), method: :delete, :class => "btn btn-danger" %>
+    <%= link_to "View Products", products_path, :class => "btn btn-primary" %>
     
 </ul>
