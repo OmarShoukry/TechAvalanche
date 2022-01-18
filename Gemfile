@@ -12,6 +12,7 @@ gem "sprockets-rails"
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 gem "webpacker", "~> 5.0"
 
+gem "bootstrap-sass"
 
 gem "pg", "~> 1.2.3"
 
