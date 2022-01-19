@@ -11,16 +11,21 @@ class ProductListingsController < ApplicationController
   def create
     this_product = ProductListing.where(product_id: params[:product_listing][:product_id], location_id: params[:product_listing][:location_id]).first
 
-    # If the 
-    if this_product.present?
+    
+    if this_product.present? && params[:product_listing][:quantity].present?
       this_product.quantity = this_product.quantity + params[:product_listing][:quantity].to_i
-      this_product.save
-      redirect_to products_path
+      if this_product.save
+        redirect_to products_path
+      else 
+        redirect_to new_product_listing_path, flash: { error: "Please select a quantity" }
+      end
     else
       product_listing = ProductListing.new(product_listing_params)
-      product_listing.save
-
-      redirect_to products_path
+      if product_listing.save
+        redirect_to products_path
+      else
+        redirect_to new_product_listing_path, flash: { error: "Please select a quantity" }
+      end
     end
 
   end

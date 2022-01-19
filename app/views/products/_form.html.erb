@@ -38,7 +38,7 @@
     <div>
         <%= form.label :Height %><br>
         <%= form.number_field :height %>
-        <% product.errors.full_messages_for(:width).each do |message| %>
+        <% product.errors.full_messages_for(:height).each do |message| %>
             <div> Please input a valid height for your product  </div>
         <% end %>
         <br>

@@ -16,7 +16,7 @@
     <div>
         <%= form.label :Quantity %><br>
         <%= form.number_field :quantity %>
-        
+        <p id="error"><%= flash[:error] %></p>
         <br>
     </div>
 
