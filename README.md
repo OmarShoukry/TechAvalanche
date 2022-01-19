@@ -11,4 +11,6 @@ The application allows you to manage warehouse locations, products and product i
 
 This app is live on [Heroku](https://tech-avalanche.herokuapp.com/)
 
+Make sure that postgresql is installed and running on your computer ([See here](https://www.postgresql.org/download/)).
+
 To run this application locally, first install all dependencies with `bundle install` then run the application with `bin/rails s`
