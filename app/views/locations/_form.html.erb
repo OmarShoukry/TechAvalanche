@@ -2,7 +2,7 @@
     <div>
         <%= form.label :Name %><br>
         <%= form.text_field :name %>
-        <% location.errors.full_messages_for(:name).each do |message| %>
+        <% if location.errors %>
             <div> Please input a valid location name </div>
         <% end %>
         <br>
@@ -11,7 +11,7 @@
     <div>
         <%= form.label :"Address Line 1" %><br>
         <%= form.text_area :addressline1 %>
-        <% location.errors.full_messages_for(:addressline1).each do |message| %>
+        <% if location.errors %>
             <div> Please input a valid Address </div>
         <% end %>
         <br>
@@ -26,7 +26,7 @@
     <div>
         <%= form.label :Province %><br>
         <%= form.select :province, options_for_select(["Alberta", "British Columbia", "Manitoba", "New Brunswick", "Newfoundland and Labrador", "Northwest Territories", "Nova Scotia", "Nunavut", "Ontario", "Prince Edward Island", "Quebec", "Saskatchewan", "Yukon"]) %>
-        <% location.errors.full_messages_for(:province).each do |message| %>
+        <% if location.errors %>
             <div> Please choose a province </div>
         <% end %>
         <br>
@@ -35,7 +35,7 @@
     <div>
         <%= form.label :City %><br>
         <%= form.text_field :city %>
-        <% location.errors.full_messages_for(:city).each do |message| %>
+        <% if location.errors %>
             <div> Please input a valid city </div>
         <% end %>
         <br>
@@ -44,7 +44,7 @@
     <div>
         <%= form.label :"Postal Code" %><br>
         <%= form.text_field :postalcode %>
-        <% location.errors.full_messages_for(:postalcode).each do |message| %>
+        <% if location.errors %>
             <div> Please input a valid Postal Code </div>
         <% end %>
         <br>
