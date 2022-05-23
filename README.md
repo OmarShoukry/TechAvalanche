@@ -1,7 +1,7 @@
 # Tech Avalanche (Shopify Application)
 
 ## App Summary
-This application is part of my application for Shopify's summer 2022 backend developer internship.
+This application is part of my application for Shopify's fall 2022 backend developer internship.
 
 This app is a standard rails app built with rails 7. The focus of this app was on the backend so views are very simple HTML and CSS.
 
